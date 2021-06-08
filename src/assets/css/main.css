@@ -1,6 +1,7 @@
-/* body {
-    font-family: $font-roboto;
-} */
+.default-background-center {
+    background-color: #121212;
+    text-align: center;
+}
 
 h1,
 h2,
@@ -10,6 +11,7 @@ h4 {
 
 html {
     font-size: 100%;
+    background-color: #121212;
 }
 
 p {
@@ -27,6 +29,128 @@ h2 {
 
 h4 {
     font-size: 1.4rem;
+}
+
+/* MEDIA */
+
+/* X-Small devices (landscape phones, 544px and up) */
+@media (min-width: 0px) {
+    /* Header, Footer, BotNav*/
+    .nav-title {
+        font-size: 2rem;
+    }
+
+    .nav-logo {
+        height: 2em;
+    }
+
+    .navbar-nav {
+        flex-direction: row;
+    }
+
+    .nav-link {
+        margin: 0 0.5em;
+    }
+
+    footer {
+        display: none;
+    }
+
+    .navbar-toggler {
+        display: none;
+    }
+
+    .footer-nav {
+        display: block;
+    }
+
+    .navbar {
+        justify-content: center;
+    }
+}
+
+/* Small devices (landscape phones, 544px and up) */
+@media (min-width: 544px) {
+    /* Header, Footer, BotNav*/
+    .nav-title {
+        font-size: 2.5rem;
+    }
+
+    .nav-logo {
+        height: 2.5em;
+    }
+
+    .navbar-nav {
+        flex-direction: row;
+    }
+
+    .nav-link {
+        margin: 0 0.5em;
+    }
+
+    footer {
+        display: block;
+    }
+
+    .navbar-toggler {
+        display: block;
+    }
+
+    .footer-nav {
+        display: none !important;
+    }
+
+    .navbar {
+        justify-content: space-between !important;
+    }
+}
+ 
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) {
+    /* Header, Footer, BotNav*/
+    .nav-title {
+        font-size: 2rem;
+    }
+
+    .nav-link {
+        font-size: 1.5em;
+    }
+
+    .nav-logo {
+        height: 2.5em;
+    }
+
+    .navbar-toggler {
+        display: none;
+    }
+}
+ 
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    /* Header, Footer, BotNav*/
+    .nav-title {
+        font-size: 2.5rem;
+    }
+
+    .nav-link {
+        font-size: 1.5em;
+    }
+
+    .nav-logo {
+        height: 3em;
+    }
+}
+ 
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    /* Header, Footer, BotNav*/
+    .nav-title {
+        font-size: 3rem;
+    }
+
+    .nav-logo {
+        height: 3em;
+    }
 }
 
 /* @media (min-width: 64em) {
@@ -53,3 +177,4 @@ p {
     margin-top: 0.2rem;
     line-height: 1.4;
 } */
+

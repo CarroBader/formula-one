@@ -1,16 +1,23 @@
 <template>
-  <div>
+  <div class="default-background-center">
     <Header />
     <router-view/>
+    <Footer />
+    <BotNav />
   </div>
 </template>
 
 <script>
 import Header from './components/Header'
+import Footer from './components/Footer'
+import BotNav from './components/BotNav'
+
 export default {
   name: 'App',
   components: {
-    Header
+    Header,
+    Footer,
+    BotNav
   }
 }
 </script>
