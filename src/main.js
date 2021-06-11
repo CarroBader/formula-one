@@ -10,6 +10,8 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import 'leaflet/dist/leaflet.css';
+import { Icon } from 'leaflet';
 
 /* Icons */
 import { faHome } from '@fortawesome/free-solid-svg-icons/faHome'
@@ -23,6 +25,13 @@ Vue.use(VueAxios, axios)
 
 library.add(faHome, faTable, faScrewdriver, faGlobeEurope)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
+
+delete Icon.Default.prototype._getIconUrl;
+Icon.Default.mergeOptions({
+  iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
+  iconUrl: require('../src/assets/img/mapMarkers/position.png'),
+  shadowUrl: require('leaflet/dist/images/marker-shadow.png')
+});
 
 Vue.config.productionTip = false
 

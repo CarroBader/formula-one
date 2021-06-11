@@ -12,16 +12,17 @@
 
 <script>
 import axios from 'axios'
+import { baseUrl } from '../vars'
 
   export default {
     name: 'Races',
     components: {
     },
-    mounted () {
+    mounted() {
     axios
-      .get('http://ergast.com/api/f1/current.json')
+      .get(`${baseUrl}current.json`)
       .then(response => {
-          console.log(response.data.MRData.RaceTable.Races);
+        console.log(response.data.MRData.RaceTable.Races);
         this.comingRaces = response.data.MRData.RaceTable.Races
       })
       .catch(error => {
@@ -33,6 +34,12 @@ import axios from 'axios'
     data () {
       return {
         comingRaces: []
+      }
+    },
+    methods: {
+      getRaceData() {
+        console.log("getRaceData");
+
       }
     }
   }

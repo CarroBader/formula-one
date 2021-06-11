@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Map from '../views/Map.vue'
 
 Vue.use(VueRouter)
 
@@ -20,8 +21,8 @@ const routes = [
     path: '/map',
     name: 'Map',
     icon: 'globe-europe',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Map.vue')
-  }
+    component: Map
+  },
 ]
 
 const router = new VueRouter({

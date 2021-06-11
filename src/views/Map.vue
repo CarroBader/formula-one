@@ -9,7 +9,7 @@
 </template>     
 
 <script>
-import RaceMap from '../components/RaceMap'
+import RaceMap from '../components/RaceMap.vue'
 
 export default {
   name: 'Map',
