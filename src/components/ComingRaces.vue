@@ -1,64 +1,84 @@
 <template>
-  <div>
-    <table
-      striped hover
-      v-for="race, i in comingRaces"
-      :key="race[i]">
-      <td> {{ race.raceName }}</td>
-      <td> {{ race.Circuit.circuitName }}</td>
+  <div style="margin-bottom: 4em;">
+    <h1 class="coming-races-title">Coming Races</h1>
+    <table>
+      <tbody       
+        v-for="race, i in futureRaces.slice(0, 5)"
+        :key="race[i]">
+      <tr class="align-title">
+        <td> <span class="race-name red-text">{{ race.raceName }}</span> 
+        - {{ race.Circuit.Location.country }}
+        <img :src="getFlagImage(race.Circuit.Location.country)" 
+        :alt='`${race.Circuit.Location.country}`' 
+        class="country-flag-img"/>
+        </td>
+      </tr>
+      <tr>
+        <th>Track:</th>
+        <td> {{ race.Circuit.circuitName }}</td>
+      </tr>
+      <tr>
+          <th>Date:</th>
+          <td> {{ race.date }}</td>
+      </tr>
+      <tr>
+          <th class="red-text">Time:</th>
+          <td class="red-text"> {{ race.time }}</td>
+      </tr>
+      <br>
+      </tbody>
     </table>
   </div>
 </template>
 
 <script>
-import axios from 'axios'
-import { baseUrl } from '../vars'
+import convertTimeMixin from '../mixins/convertTimeMixin'
 
-  export default {
-    name: 'Races',
-    components: {
+export default {
+    name: 'ComingRaces',
+    props: {
+        futureRaces: Array
     },
     mounted() {
-    axios
-      .get(`${baseUrl}current.json`)
-      .then(response => {
-        console.log(response.data.MRData.RaceTable.Races);
-        this.comingRaces = response.data.MRData.RaceTable.Races
-      })
-      .catch(error => {
-        console.log(error)
-        this.errored = true
-      })
-      .finally(() => this.loading = false)
-    },
-    data () {
-      return {
-        comingRaces: []
-      }
+      this.convertTimeOfArray()
     },
     methods: {
-      getRaceData() {
-        console.log("getRaceData");
-
+      getFlagImage(country) {
+        return require(`../assets/img/flags/${country}.png`)
+      },
+      convertTimeOfArray() {
+        for(let i = 0; i < this.futureRaces.length; i++) {
+          this.futureRaces[i].time = this.convertTime(this.futureRaces[i])
+        }
       }
-    }
-  }
+    },
+    mixins: [convertTimeMixin]
+}
 </script>
 
 <style scoped>
-table {
-  font-family: 'Orbitron', 'sans-serif';
-  color: white;
-  width: 100%;
+
+th {
+  text-align: initial;
+  font-size: 0.9em;
+  color: #fff;
 }
 
-td, th {
-  /* border: 1px solid #dddddd; */
-  text-align: left;
-  padding: 8px;
+td {
+  text-align: end;
+  width:100%;
+  color: #fff;
 }
 
-tr:nth-child(even) {
-  background-color: #dddddd;
+.coming-races-title {
+  text-decoration: underline;
+  margin-bottom: 0.7em;
 }
+
+.country-flag-img {
+  height: 0.8em;
+  width: 1.6em;
+}
+
 </style>
+

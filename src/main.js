@@ -28,7 +28,7 @@ Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 delete Icon.Default.prototype._getIconUrl;
 Icon.Default.mergeOptions({
-  iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
+  iconRetinaUrl: require('../src/assets/img/mapMarkers/position.png'),
   iconUrl: require('../src/assets/img/mapMarkers/position.png'),
   shadowUrl: require('leaflet/dist/images/marker-shadow.png')
 });
