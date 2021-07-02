@@ -18,12 +18,13 @@ import { faHome } from '@fortawesome/free-solid-svg-icons/faHome'
 import { faTable } from '@fortawesome/free-solid-svg-icons/faTable'
 import { faScrewdriver } from '@fortawesome/free-solid-svg-icons/faScrewdriver'
 import { faGlobeEurope } from '@fortawesome/free-solid-svg-icons/faGlobeEurope'
+import { faStopwatch } from '@fortawesome/free-solid-svg-icons/faStopwatch'
 
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 Vue.use(VueAxios, axios)
 
-library.add(faHome, faTable, faScrewdriver, faGlobeEurope)
+library.add(faHome, faTable, faScrewdriver, faGlobeEurope, faStopwatch)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 delete Icon.Default.prototype._getIconUrl;

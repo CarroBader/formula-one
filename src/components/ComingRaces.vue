@@ -1,8 +1,8 @@
 <template>
   <div style="margin-bottom: 4em;">
-    <h1 class="coming-races-title">Coming Races</h1>
+    <h1 class="coming-races-title">Upcoming Races</h1>
     <table>
-      <tbody       
+      <tbody
         v-for="race, i in futureRaces.slice(0, 5)"
         :key="race[i]">
       <tr class="align-title">
@@ -35,24 +35,24 @@
 import convertTimeMixin from '../mixins/convertTimeMixin'
 
 export default {
-    name: 'ComingRaces',
-    props: {
-        futureRaces: Array
+  name: 'ComingRaces',
+  props: {
+      futureRaces: Array
+  },
+  mounted() {
+    this.convertTimeOfArray()
+  },
+  methods: {
+    getFlagImage(country) {
+      return require(`../assets/img/flags/${country}.png`)
     },
-    mounted() {
-      this.convertTimeOfArray()
-    },
-    methods: {
-      getFlagImage(country) {
-        return require(`../assets/img/flags/${country}.png`)
-      },
-      convertTimeOfArray() {
-        for(let i = 0; i < this.futureRaces.length; i++) {
-          this.futureRaces[i].time = this.convertTime(this.futureRaces[i])
-        }
+    convertTimeOfArray() {
+      for(let i = 0; i < this.futureRaces.length; i++) {
+        this.futureRaces[i].time = this.convertTime(this.futureRaces[i])
       }
-    },
-    mixins: [convertTimeMixin]
+    }
+  },
+  mixins: [convertTimeMixin]
 }
 </script>
 
