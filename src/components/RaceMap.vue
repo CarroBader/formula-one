@@ -115,12 +115,12 @@ export default {
 </script>
 
 <style>
- .map {
-    position: fixed;
-    top: 6.2em;
-    left: 0;
-    bottom: 0;
-    right: 0;
+.map {
+  position: fixed;
+  top: 6.2em;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
 .leaflet-tooltip {

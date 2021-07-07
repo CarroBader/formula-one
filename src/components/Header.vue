@@ -10,7 +10,7 @@
         <b-navbar-nav>
             <router-link 
                 v-for="route in routes" 
-                :key="route.path" 
+                :key="route.path"
                 :to="route.path"
                 class="nav-link">
             {{route.name}}
@@ -37,6 +37,7 @@ export default {
     background-color: #ff1616;
     border-bottom: 1px solid white;
     margin-bottom: 2em;
+    z-index: 10000;
 }
 
 .nav-title {

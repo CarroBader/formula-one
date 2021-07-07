@@ -57,7 +57,7 @@ tr {
 
 /* X-Small devices (landscape phones, 544px and up) */
 @media (min-width: 0px) {
-	/* Header, Footer, BotNav*/
+	/* Header, Footer, BotNav */
 	.nav-title {
 		font-size: 2rem;
 	}
@@ -105,6 +105,12 @@ tr {
 	.align-title {
 		text-align: left;
 	}
+
+	.leaflet-touch 
+	.leaflet-control-layers, 
+	.leaflet-touch .leaflet-bar {
+		margin-top: 1em !important;
+	}
 }
 
 /* Small devices (landscape phones, 544px and up) */
@@ -141,6 +147,12 @@ tr {
 	.navbar {
 		justify-content: space-between !important;
 	}
+
+	.leaflet-touch 
+	.leaflet-control-layers, 
+	.leaflet-touch .leaflet-bar {
+		margin-top: 4em !important;
+	}
 }
  
 /* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
@@ -160,6 +172,12 @@ tr {
 
 	.navbar-toggler {
 		display: none;
+	}
+
+	.leaflet-touch 
+	.leaflet-control-layers, 
+	.leaflet-touch .leaflet-bar {
+		margin-top: 1em !important;
 	}
 }
  
@@ -189,6 +207,12 @@ tr {
 	.race-name {
 		font-size: 1.1em;
 	}
+
+	.leaflet-touch 
+	.leaflet-control-layers, 
+	.leaflet-touch .leaflet-bar {
+		margin-top: 1em !important;
+	}
 }
  
 /* Extra large devices (large desktops, 1200px and up) */
@@ -216,6 +240,12 @@ tr {
 
 	.align-title {
 		text-align: end;
+	}
+
+	.leaflet-touch 
+	.leaflet-control-layers, 
+	.leaflet-touch .leaflet-bar {
+		margin-top: 1em !important;
 	}
 }
 

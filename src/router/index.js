@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Standings from '../views/Standings.vue'
 import Map from '../views/Map.vue'
 
 Vue.use(VueRouter)
@@ -16,6 +17,12 @@ const routes = [
     name: 'Home',
     icon: 'home',
     component: Home
+  },
+  {
+    path: '/standings',
+    name: 'Standings',
+    icon: 'table',
+    component: Standings
   },
   {
     path: '/map',
