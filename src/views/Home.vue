@@ -148,8 +148,9 @@ export default {
     },
     async getNextRaceQuali(season, currentRound) {
        try {
-        const response = await axios.get(`${baseUrl}${season}/${currentRound}/qualifying.json`)
-        //const response = await axios.get(`${baseUrl}${season}/9/qualifying.json`)
+        //const response = await axios.get(`${baseUrl}${season}/${currentRound}/qualifying.json`)
+        console.log(currentRound)
+        const response = await axios.get(`${baseUrl}${season}/9/qualifying.json`)
         let qualiForRace = response.data.MRData.RaceTable.Races
         if (qualiForRace.length != 0) {
           this.nextRaceQuali = response.data.MRData.RaceTable.Races[0].QualifyingResults

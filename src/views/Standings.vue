@@ -1,22 +1,19 @@
 <template>
   <b-container class="default-background-center">
   <div class="row">
-    <div class="col">
+    <div class="col hej">
       <DriverStandings
       :driverStandings="driverStandings"
       v-if="getDriverStandingsDone"
        />
     </div>
-    <div class="col">
-      2/1
-    </div>
   </div>
   <div class="row">
-    <div class="col">
-      1/2
-    </div>
-    <div class="col"> 
-      2/2
+    <div class="col hej">
+      <ConstructorStandings
+      :constructorStandings="constructorStandings"
+      v-if="getConstructorStandingsDone"
+       />
     </div>
   </div>
   </b-container>
@@ -26,23 +23,25 @@
 import axios from 'axios'
 import { baseUrl } from '../vars'
 import DriverStandings from '../components/DriverStandings.vue'
+import ConstructorStandings from '../components/ConstructorStandings.vue'
 
-export default {
-  name: 'Home',
+export default { 
+  name: 'Standings',
   components: {
-    DriverStandings
+    DriverStandings,
+    ConstructorStandings
   },
   data() {
     return {
       getDriverStandingsDone: false,
-      // getTopConstructorDone: false,
+      getConstructorStandingsDone: false,
       driverStandings: null,
-      // leaderConstructor: null
+      constructorStandings: null
     }
   },
   mounted() {
     this.getDriverStandings()
-    //this.getConstructorDriver()
+    this.getConstructorStandings()
   },
   methods: {
     async getDriverStandings() {
@@ -55,19 +54,22 @@ export default {
         console.error(e)
       }
     },
-    // async getConstructorDriver() {
-    //   try {
-    //     const response = await axios.get(`${baseUrl}current/constructorStandings.json`)
-    //     this.leaderConstructor = response.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings
-    //     this.getTopConstructorDone = true
-    //   } catch(e) {
-    //     console.error(e)
-    //   }
-    // },
+    async getConstructorStandings() {
+      try {
+        const response = await axios.get(`${baseUrl}current/constructorStandings.json`)
+        this.constructorStandings = response.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings
+        this.getConstructorStandingsDone = true
+      } catch(e) {
+        console.error(e)
+      }
+    },
   }
 }
 </script>
 
 <style scoped>
+.hej {
+  margin: 0 15em;
+}
 
 </style>

@@ -11,7 +11,7 @@
         <th>Car</th>
         <th>Points</th>
         <th></th>
-      </tr>
+    </tr>
       <tbody         
         v-for="res, i in results"
         :key="res[i]">
@@ -100,7 +100,7 @@ td {
 }
 
 .country-flag-img {
-  height: 0.8em;
+  height: 1em;
   width: 1.6em;
 }
 

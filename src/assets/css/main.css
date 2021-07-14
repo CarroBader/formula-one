@@ -1,13 +1,17 @@
 .default-background-center {
 	background-color: #121212;
 	text-align: center;
+	margin-bottom: 5em;
 }
 
 /* Font and size */
 
 h1,
 h2,
-h4 {
+h3,
+h4,
+h5,
+h6 {
 	font-family: 'Orbitron', 'sans-serif';
 	color: #fff;
 }
@@ -274,3 +278,44 @@ p {
     line-height: 1.4;
 } */
 
+/* Driver and Team Colors */
+
+.mclaren {
+	color: #E0610E !important;
+}
+
+.red-bull {
+	color: #4166C6 !important;
+}
+
+.mercedes {
+	color: #00D2BE !important;
+}
+
+.alpha-romeo {
+	color: #900000 !important;
+}
+
+.alpha-tauri {
+	color: #2B4562 !important;
+}
+
+.haas {
+	color: #FFFFFF !important;
+}
+
+.alpine {
+	color: #0090FF !important;
+}
+
+.ferrari {
+	color: #DC0000 !important;
+}
+
+.williams {
+	color: #005AFF !important;
+}
+
+.aston-martin {
+	color: #006F62 !important;
+}

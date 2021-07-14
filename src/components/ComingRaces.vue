@@ -76,7 +76,7 @@ td {
 }
 
 .country-flag-img {
-  height: 0.8em;
+  height: 1em;
   width: 1.6em;
 }
 
